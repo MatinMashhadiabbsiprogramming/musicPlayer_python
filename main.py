@@ -8,11 +8,12 @@ page=Tk()
 
 mixer.init()
 
+#list music
 mus_file=[]
 count=0
 def listMusic():
     pass
-
+#add music
 def addMusic():
     musicValue=filedialog.askdirectory()
     if musicValue:
@@ -23,6 +24,7 @@ def addMusic():
             if song.endswith(".mp3"):
                 mus_file.append(song)
                 listbox.insert(END,song)
+#Play music
 def playMusic():
     global count 
     musicName=mus_file[0] #chking...
@@ -31,15 +33,17 @@ def playMusic():
     mixer.music.load(musicName)
     mixer.music.play()
 
+#Stop music  
 def stopMusic():
     mixer.music.pause()
 
+#Next music  
 def nextMusic():
         global count
         count+=1
         mixer.music.load(mus_file[count])
         mixer.music.play()
-#Back M   
+#Back music  
 def backMusic():
     global count
     count-=1
