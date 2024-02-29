@@ -12,6 +12,7 @@ mus_file=[]
 count=0
 def listMusic():
     pass
+
 def addMusic():
     musicValue=filedialog.askdirectory()
     if musicValue:
@@ -38,8 +39,8 @@ def nextMusic():
         count+=1
         mixer.music.load(mus_file[count])
         mixer.music.play()
-   
-def backMudic():
+#Back M   
+def backMusic():
     global count
     count-=1
     mixer.music.load(mus_file[count])
@@ -72,7 +73,7 @@ btn_play=Button(page,text="play music",bg="red",command=playMusic).place(x=10,y=
 btn_play=Button(page,text="add music",bg="green",command=addMusic).place(x=10,y=90)
 #Button next music
 btn_play=Button(page,text="next music",bg="pink",command=nextMusic).place(x=10,y=130)
-btn_play=Button(page,text="back music",bg="pink",command=backMudic).place(x=10,y=170)
+btn_play=Button(page,text="back music",bg="pink",command=backMusic).place(x=10,y=170)
 #Button stop
 btn_play=Button(page,text="stop music",bg="yellow",command=stopMusic).place(x=10,y=210)
 btn_play=Button(page,text="un music",bg="yellow",command=unPauseMusic).place(x=10,y=250)
